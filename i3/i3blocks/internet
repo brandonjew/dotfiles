@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SSID=$(iwgetid -r)
+
+case $BLOCK_BUTTON in
+	1) echo ${SSID};;
+	3) xdotool key Super_L+i
+esac
+
+if [[ -z "${SSID// }" ]]; then
+  echo  # full text
+  echo  # short text
+  exit
+fi
+
+echo "" # full text
+echo "" # short text
+

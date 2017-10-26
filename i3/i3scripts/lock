@@ -1,0 +1,8 @@
+#!/bin/bash
+ICON=$HOME/Packages/i3lock/newlock.png
+TMPBG=/tmp/screen.png
+scrot /tmp/screen.png
+convert $TMPBG -scale 2% -scale 5000% $TMPBG # pixelate current desktop
+convert $TMPBG $ICON -gravity center -composite -matte $TMPBG
+i3lock -u -i $TMPBG -e
+
